@@ -58,9 +58,7 @@ requirements: ## install dev requirements locally
 	uv sync --group dev
 
 test.quality: selfcheck ## run quality checkers on the codebase
-	uv run --group quality pycodestyle src/drag_and_drop_v2 tests manage.py --max-line-length=120
-	uv run --group quality pylint src/drag_and_drop_v2
-	uv run --group quality pylint tests --rcfile=tests/pylintrc
+	uv run tox -e quality
 
 test.python: ## run python unit tests in the local virtualenv
 	uv run --group test pytest --cov drag_and_drop_v2 $(TEST)
