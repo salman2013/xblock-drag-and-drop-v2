@@ -61,7 +61,7 @@ test.quality: selfcheck ## run quality checkers on the codebase
 	uv run tox -e quality
 
 test.python: ## run python unit tests in the local virtualenv
-	uv run --group test pytest --cov drag_and_drop_v2 $(TEST)
+	uv run --group test pytest --cov src/drag_and_drop_v2 $(TEST)
 
 test.unit: ## run all unit tests
 	uv run --group test pytest $(TEST)
